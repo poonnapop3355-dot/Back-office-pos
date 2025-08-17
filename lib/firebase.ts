@@ -1,18 +1,19 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
+import { initializeApp } from "firebase/app";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCeWnsxEs3rrsXUH1LtK5QR3s8AAny5ya0",
-  authDomain: "liulaoshi-shop.firebaseapp.com",
-  projectId: "liulaoshi-shop",
-  storageBucket: "liulaoshi-shop.firebasestorage.app",
-  messagingSenderId: "765144873502",
-  appId: "1:765144873502:web:d80f26e92684284f6b0c0f",
-  measurementId: "G-H1VRPL5HV5"
+ apiKey:"AIzaSyCeWnsxEs3rrsXUH1LtK5QR3s8AAny5ya0",
+  authDomain: "pos-back-office-fba73.firebaseapp.com",
+  projectId: "pos-back-office-fba73",
+  storageBucket: "pos-back-office-fba73.appspot.com",
+  messagingSenderId: "367332308119",
+  appId: "1:367332308119:web:9c50153835c24e0f40776b"
 };
 
-// Initialize Firebase
-const app = firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
 
-export { db };
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+// 4. เรียกใช้ service ที่ต้องการ (เช่น Firestore) และ export ออกไป
+// นี่คือการ Export แบบ Named Export
+export const db = getFirestore(app);
