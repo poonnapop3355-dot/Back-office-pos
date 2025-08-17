@@ -1,0 +1,5 @@
+{
+  "name": "Bookstore Back-Office",
+  "description": "An all-in-one back-office system for managing an online bookstore. This application includes a dashboard for sales insights, order management, and a powerful shipping label printing feature supporting multiple layouts.",
+  "requestFramePermissions": []
+}

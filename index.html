@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-g" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookstore Back-Office</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700&family=Sarabun:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Sarabun', 'Noto Sans Thai', 'sans-serif'],
+            },
+            colors: {
+              primary: {
+                DEFAULT: '#3b82f6',
+                '50': '#eff6ff',
+                '100': '#dbeafe',
+                '200': '#bfdbfe',
+                '300': '#93c5fd',
+                '400': '#60a5fa',
+                '500': '#3b82f6',
+                '600': '#2563eb',
+                '700': '#1d4ed8',
+                '800': '#1e40af',
+                '900': '#1e3a8a',
+              },
+            },
+          }
+        }
+      }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/qrcode-generator/qrcode.js"></script>
+
+    <style>
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
+      @media print {
+        body * {
+          visibility: hidden;
+        }
+        .printable-area, .printable-area * {
+          visibility: visible;
+        }
+        .printable-area {
+          position: absolute;
+          left: 0;
+          top: 0;
+          width: 100%;
+        }
+        .label-sheet {
+          page-break-after: always;
+        }
+        .label-sheet:last-child {
+          page-break-after: auto;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.1.1/",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.8.0",
+    "react": "https://esm.sh/react@^19.1.1",
+    "react/": "https://esm.sh/react@^19.1.1/",
+    "firebase/app": "https://esm.sh/firebase@10.12.2/app",
+    "firebase/firestore": "https://esm.sh/firebase@10.12.2/firestore",
+    "firebase/": "https://esm.sh/firebase@10.12.2/"
+  }
+}
+</script>
+</head>
+  <body class="bg-gray-50 text-gray-800 font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>
