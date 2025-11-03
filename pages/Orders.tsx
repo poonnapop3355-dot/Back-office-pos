@@ -244,12 +244,18 @@ const Orders: React.FC = () => {
 
     if (name.startsWith('shipping.')) {
         const field = name.split('.')[1];
+        const newShipping = {
+            ...editingOrder.shipping,
+            [field]: value
+        };
+
+        if (field === 'tracking' && editingOrder.shipping.carrier === 'Kerry Express') {
+            newShipping.trackingUrl = `https://th.kerryexpress.com/th/track/?track=${value}`;
+        }
+
         setEditingOrder({
             ...editingOrder,
-            shipping: {
-                ...editingOrder.shipping,
-                [field]: value
-            }
+            shipping: newShipping
         });
     } else {
         setEditingOrder({
